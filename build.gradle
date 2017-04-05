@@ -1,0 +1,25 @@
+plugins {
+  id 'com.github.hierynomus.license' version '0.11.0'
+}
+
+group 'kn.uni.algo'
+version '1.0'
+
+apply plugin: 'java'
+
+license {
+    ext.name = rootProject.name
+    ext.year = '2016-2017'
+    ext.author = 'Mark Ortmann (University of Konstanz)'
+    header rootProject.file('license-header')
+    includes(['**/*.java'])
+    mapping {
+        java = 'SLASHSTAR_STYLE' // suppress javadoc checking of license
+    }
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'Main'
+    }
+}

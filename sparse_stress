@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+dir=$(dirname "$0")
+jar=$dir/build/libs/sparse_stress.jar
+
+[[ -f "$jar" ]] || "$dir/gradlew" build   
+
+java -jar "$jar" "$@"
